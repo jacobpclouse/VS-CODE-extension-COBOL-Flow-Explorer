@@ -1,0 +1,31 @@
+{
+  "name": "cobol-flow-explorer",
+  "displayName": "COBOL Flow Explorer",
+  "description": "Explore COBOL paragraph flow and trace data changes through files and tables.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Visualization", "Programming Languages"],
+  "main": "./src/extension.js",
+  "scripts": {
+    "test": "node test/analyzer.test.js"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "cobolFlow.open",
+        "title": "COBOL: Open Flow Explorer"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "cobolFlow.open",
+        "key": "ctrl+alt+f",
+        "mac": "cmd+alt+f",
+        "when": "editorTextFocus && (editorLangId == cobol || resourceExtname == .cbl || resourceExtname == .cob || resourceExtname == .cpy)"
+      }
+    ]
+  }
+}
